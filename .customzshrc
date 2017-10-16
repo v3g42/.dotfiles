@@ -1,0 +1,57 @@
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+export GOPATH=/Users/vivek/projects/go
+export PATH=$PATH:$GOPATH/bin
+
+gyn() { cd ~/projects/nodejs/github.com/yojee/$1; }
+_gyn() { _files -W ~/projects/nodejs/github.com/yojee -/; }
+
+gyr() { cd ~/projects/ruby/github.com/yojee/$1; }
+_gyr() { _files -W ~/projects/ruby/github.com/yojee -/; }
+
+gyj() { cd ~/projects/java/github.com/yojee/$1; }
+_gyj() { _files -W ~/projects/java/github.com/yojee -/; }
+
+gyg() { cd ~/projects/go/src/github.com/yojee/$1; }
+_gyg() { _files -W ~/projects/go/src/github.com/yojee -/; }
+
+gyp() { cd ~/projects/python/github.com/yojee/$1; }
+_gyp() { _files -W ~/projects/python/github.com/yojee -/; }
+
+gyx() { cd ~/projects/xcode/github.com/yojee/$1; }
+_gyx() { _files -W ~/projects/xcode/github.com/yojee -/; }
+
+gyc() { cd ~/projects/csharp/github.com/yojee/$1; }
+_gyc() { _files -W ~/projects/csharp/github.com/yojee -/; }
+
+gvp() { cd ~/projects/python/github.com/vivekg342/$1; }
+_gvp() { _files -W ~/projects/python/github.com/vivekg342 -/; }
+
+gvr() { cd ~/projects/ruby/github.com/vivekg342/$1; }
+_gvr() { _files -W ~/projects/ruby/github.com/vivekg342 -/; }
+
+gvn() { cd ~/projects/nodejs/github.com/vivekg342/$1; }
+_gvn() { _files -W ~/projects/nodejs/github.com/vivekg342 -/; }
+
+
+# Creates completions for go, ruby and nodeJS yojee directories
+compdef _gyn gyn
+compdef _gyr gyr
+compdef _gyj gyj
+compdef _gyg gyg
+compdef _gyp gyp
+compdef _gyx gyx
+compdef _gyc gyc
+
+compdef _gvp gvp
+compdef _gvr gvn
+compdef _gvn gvn
+
+
+
+#ANDROID SETUP
+export ANDROID_HOME="/Users/vivek/Library/Android/sdk"
+export PATH=$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/build-tools:$ANDROID_HOME/tools
+
+# fix emulator
+function emulator { ( cd "$(dirname "$(whence -p emulator)")" && ./emulator "$@"; ) }

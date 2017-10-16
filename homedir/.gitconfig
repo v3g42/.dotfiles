@@ -1,9 +1,9 @@
 [user]
-  name = GITHUBFULLNAME
-  email = GITHUBEMAIL
+  name = vivek
+  email = vivekg342@gmail.com
 [github]
   # https://github.com/blog/180-local-github-config
-  user = GITHUBUSER
+  user = vivekg342
 [color]
 # ui = true is a superset of all the more specific color options
 #  as documented at http://book.git-scm.com/5_customizing_git.html
@@ -24,11 +24,11 @@
   meta = yellow bold
   frag = magenta bold
   old = red bold
-  new = green bold
+  new = green
 [color "status"]
   added = yellow
   changed = green
-  untracked = cyan
+  untracked = magenta
 
 [advice]
   statusHints = false
@@ -198,3 +198,7 @@
   clean = git-lfs clean %f
   smudge = git-lfs smudge %f
   required = true
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[grep]
+	extendedRegexp = true
